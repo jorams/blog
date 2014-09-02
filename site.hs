@@ -61,7 +61,7 @@ main = hakyll $ do
 
 feedConfiguration :: FeedConfiguration
 feedConfiguration = FeedConfiguration
-    { feedTitle       = "Reinventing the future"
+    { feedTitle       = "Reinventing the Future"
     , feedDescription = "Lisp, things, and more"
     , feedAuthorName  = "Joram Schrijver"
     , feedAuthorEmail = "hi@joram.io"
