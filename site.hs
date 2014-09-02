@@ -54,9 +54,3 @@ postCtx :: Context String
 postCtx =
     dateField "date" "%Y-%m-%d" `mappend`
     defaultContext
-
---------------------------------------------------------------------------------
--- Useful pieces of code -- For reference
---------------------------------------------------------------------------------
--- match (fromList ["about.rst", "contact.markdown"]) $ do
----- Aka: You can also match a specific list of things.
