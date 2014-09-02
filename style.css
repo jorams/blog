@@ -59,7 +59,7 @@ header#top {
 }
 
 header#top:hover {
-    box-shadow: inset 0px 5px 0px #0061C9;
+    box-shadow: inset 0px 5px 0px #3094FF;
 }
 
 header#top a {
@@ -128,7 +128,7 @@ h3 { font-size: 26px; }
 }
 
 a {
-    color: #0061C9;
+    color: #3094FF;
     text-decoration: none;
 }
 
@@ -145,7 +145,7 @@ a:hover {
 
 .postlist li:hover {
     transition: all .1s;
-    box-shadow: -5px 0px 0px #0061C9;
+    box-shadow: -5px 0px 0px #3094FF;
 }
 
 .postlist a, .postlist .info {
