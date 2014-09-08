@@ -21,7 +21,7 @@ main = hakyll $ do
 
     match "posts/*" $ do
         route $ setExtension "html"
-        compile $ pandocCompilerWith defaultHakyllReaderOptions withToc
+        compile $ pandocCompilerWith defaultHakyllReaderOptions noToc
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/default.html" postCtx
@@ -54,6 +54,11 @@ main = hakyll $ do
         { writerTableOfContents = True
         , writerTemplate =
             "$if(toc)$<div id=\"TOC\"><h2>Table of Contents</h2>$toc$</div>\n$endif$$body$"
+        , writerStandalone = True
+        , writerReferenceLinks = False }
+    noToc = defaultHakyllWriterOptions
+        { writerTableOfContents = False
+        , writerTemplate = "$body$"
         , writerStandalone = True
         , writerReferenceLinks = False }
 
