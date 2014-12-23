@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Gravity-like things
+title:  Gravity-like Things
 date:   2014-09-17
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Improved Gravity-like things
+title:  Improved Gravity-like Things
 date:   2014-12-21
 ---
 
