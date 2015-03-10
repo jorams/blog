@@ -38,8 +38,8 @@
 /* Page styling */
 
 body {
-    color: #000;
-    background-color: #eee;
+    color: #eee;
+    background-color: #151515;
     margin: 0;
     font-family: "charter", serif;
     font-size: 24px;
@@ -59,7 +59,7 @@ header#top {
 }
 
 header#top:hover {
-    box-shadow: inset 0px 5px 0px #0061C9;
+    box-shadow: inset 0px 5px 0px #3094FF;
 }
 
 header#top a {
@@ -78,7 +78,7 @@ footer ul {
     margin: 2em auto;
     text-align: center;
     padding: 1em 0;
-    border-top: 2px solid #ccc;
+    border-top: 2px solid #111;
     font-size: 20px;
 }
 
@@ -94,20 +94,14 @@ footer li:not(:first-child):before {
 
 /* General content */
 
-p, h1, h2, h3, h4, hr {
+p, h1, h2, h3, h4, hr, div.figure {
     max-width: 700px;
     margin: 1em auto;
     padding: 0 1em;
 }
 
-div.figure {
-    background-color: #222;
-}
-
 div.figure img {
-    display: block;
-    max-width: 700px;
-    margin: 0 auto;
+    max-width: 100%;
 }
 
 li {
@@ -118,11 +112,11 @@ li {
 blockquote {
     max-width: 700px;
     margin: 1em auto;
-    border-left: 5px solid #ccc;
+    border-left: 5px solid #111;
 }
 
 hr {
-    border: 2px solid #ccc;
+    border: 2px solid #111;
 }
 
 h1 { font-size: 34px; }
@@ -137,7 +131,7 @@ h3 { font-size: 26px; }
 }
 
 a {
-    color: #0061C9;
+    color: #3094FF;
     text-decoration: none;
 }
 
@@ -149,12 +143,16 @@ a:hover {
 
 .postlist {
     font-size: 20px;
-    list-style: none;
+    list-style: inside;
+}
+
+.postlist li {
+    transition: all .2s;
 }
 
 .postlist li:hover {
-    transition: all .1s;
-    box-shadow: -5px 0px 0px #0061C9;
+    transition: all .2s;
+    color: #222;
 }
 
 .postlist a, .postlist .info {
@@ -171,22 +169,18 @@ a:hover {
 code {
     font-family: "firamono", monospace;
     font-size: 18px;
-    background-color: #ccc;
-    padding: 2px 2px 0 2px;
-    border-radius: 4px;
+    background-color: #111;
 }
 
 /* Code blocks */
 
 pre {
-    background-color: #222;
+    background-color: #111;
     width: 100%;
     line-height: 110%;
-    color: white;
 }
 
 pre code {
-    background-color: #222;
     font-size: 16px;
     display: block;
     max-width: 800px;
