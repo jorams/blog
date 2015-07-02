@@ -27,22 +27,12 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
-    match "bits/*" $ do
-        route $ setExtension "html"
-        compile $ pandocCompilerWith defaultHakyllReaderOptions noToc
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
-            >>= saveSnapshot "content"
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
-            >>= relativizeUrls
-
     match "index.html" $ do
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
-            bits <- recentFirst =<< loadAll "bits/*"
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
-                    listField "bits" postCtx (return bits) `mappend`
                     defaultContext
 
             getResourceBody
