@@ -8,18 +8,20 @@
         <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Reinventing the Future" />
     </head>
     <body>
-        <header id="top">
-            <a href="/">…</a>
-        </header>
-        <section id="content">
-            $body$
-        </section>
-        <footer>
-            <ul>
-                <li>Joram Schrijver</li>
-                <li><a href="mailto:hi@joram.io">Email</a></li>
-                <li><a href="https://github.com/jorams">Github</a></li>
-            </ul>
-        </footer>
+        <div id="pagewrap">
+            <aside id="main-sidebar">
+                <h1><a href="/">Reinventing the Future</a></h1>
+                <div class="sidebar-author">
+                    <h2>Joram Schrijver</h2>
+                    <ul>
+                        <li><a href="https://github.com/jorams">GitHub</a></li>
+                        <li><a href="mailto:hi@joram.io">Email</a></li>
+                    </ul>
+                </div>
+            </aside>
+            <section id="content">
+                $body$
+            </section>
+        </div>
     </body>
 </html>
