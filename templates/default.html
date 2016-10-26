@@ -1,27 +1,22 @@
 <!doctype html>
-<html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="viewport" content="initial-scale=1">
-        <title>$title$</title>
-        <link rel="stylesheet" type="text/css" href="/style.css" />
-        <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Reinventing the Future" />
-    </head>
-    <body>
-        <div id="pagewrap">
-            <aside id="main-sidebar">
-                <h1><a href="/">Reinventing the Future</a></h1>
-                <div class="sidebar-author">
-                    <h2>Joram Schrijver</h2>
-                    <ul>
-                        <li><a href="https://github.com/jorams">GitHub</a></li>
-                        <li><a href="mailto:hi@joram.io">Email</a></li>
-                    </ul>
-                </div>
-            </aside>
-            <section id="content">
-                $body$
-            </section>
-        </div>
-    </body>
-</html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="initial-scale=1">
+<title>$if(browserTitle)$ $browserTitle$ $else$ $title$ $endif$
+  - Joram Schrijver</title>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Reinventing the Future" />
+
+<div id="pagewrap">
+  <section id="header">
+    <h1><a href="/">Joram Schrijver</a></h1>
+    <nav class="site-navigation">
+      <ul>
+        <li><a href="/">About</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </nav>
+  </section>
+  <section id="content">
+    $body$
+  </section>
+</div>

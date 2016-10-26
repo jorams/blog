@@ -40,5 +40,5 @@ Code on [GitHub][gravity].
 
 ![](/images/gravity-2.png)
 
-[wrote]: /bits/2014-09-17-gravity-like-things.html
+[wrote]: /blog/gravity-like-things/
 [gravity]: https://github.com/jorams/gravity
