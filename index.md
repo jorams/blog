@@ -8,9 +8,6 @@ on [GitHub](https://github.com/jorams).
 
 Occasionally I [blog](/blog).
 
-I'm currently studying Computer Science at
-[Windesheim](http://www.windesheiminternational.nl/).
-
 ## Contact
 
 Talk to me on the internet.
