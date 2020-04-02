@@ -1,0 +1,11 @@
+<ul class="postlist">
+  <c:splice iterate="posts">
+    <li>
+      <a lquery="(attr :href (post-url *)) (text (post-title *))">TITLE</a>
+      <span class="info">
+        &nbsp;&ndash;&nbsp;
+        <c:splice lquery="(text (format-date (post-published *)))">DATE</c:splice>
+      </span>
+    </li>
+  </c:splice>
+</ul>

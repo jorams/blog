@@ -1,0 +1,19 @@
+<article>
+  <header class="title-wrapper">
+    <h1 class="title"><a href="." lquery="(text (post-title post))">TITLE</a></h1>
+    <div class="info">
+      <c:splice lquery="(text (format-date (post-published post)))">
+        DATE
+      </c:splice>
+      <c:when test="(post-updated post)">
+        (updated on <c:splice lquery="(text (format-date (post-updated post)))">UPDATED</c:splice>)
+      </c:when></div>
+  </header>
+  <c:splice lquery="(html (post-html post))">BODY</c:splice>
+
+  <hr>
+  <p>
+    Found a problem? Have a question?
+    Shoot me an <a href="mailto:hi@joram.io">email</a>.
+  </p>
+</article>

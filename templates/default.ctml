@@ -1,0 +1,21 @@
+<!doctype html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="initial-scale=1">
+<title><c:splice lquery="(text title)">TITLE</c:splice> - Joram Schrijver</title>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Reinventing the Future" />
+
+<div id="pagewrap">
+  <section id="header">
+    <h1><a href="/">Joram Schrijver</a></h1>
+    <nav class="site-navigation">
+      <ul>
+        <li><a href="/">About</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
+    </nav>
+  </section>
+  <section id="content" lquery="(html body)">
+    BODY
+  </section>
+</div>

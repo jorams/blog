@@ -1,15 +1,10 @@
-.PHONY: sandbox init web
+.PHONY: all web clean
 
-all: site
+all:
+	sbcl --noinform --disable-debugger --load generate.lisp --quit
 
-sandbox:
-	cabal sandbox init
+web: all
+	python -m http.server -d _site
 
-init: sandbox
-	cabal install hakyll
-
-site: site.hs
-	cabal exec ghc -- -outputdir _build --make site.hs
-
-web: site
-	./site watch
+clean:
+	rm -rf _site

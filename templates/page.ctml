@@ -1,0 +1,6 @@
+<article>
+  <header class="title-wrapper">
+    <h1 class="title"><a href="." lquery="(text title)">TITLE</a></h1>
+  </header>
+  <c:splice lquery="(html body)">BODY</c:splice>
+</article>

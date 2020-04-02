@@ -1,0 +1,216 @@
+/* Settings ---------------------------------------------------------------- */
+
+:root {
+    --c-dark: #1a1a1a;
+    --c-darker: #111;
+    --c-light: #eee;
+    --c-blue: #3094ff;
+
+    --f-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+    --f-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --f-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    --fs-h1: 40px;
+    --fs-h2: 30px;
+    --fs-h3: 26px;
+    --fs-body: 21px;
+    --fs-code: 18px;
+    --fs-code-block: 17px;
+
+    --s-page-width: 700px;
+    --s-code-block-width: 800px;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --c-dark: #eee;
+        --c-darker: #e5e5e5;
+        --c-light: #111;
+        --c-blue: #3094ff;
+    }
+}
+
+/* Page styling ------------------------------------------------------------ */
+
+body {
+    color: var(--c-light);
+    background-color: var(--c-dark);
+    margin: 0;
+    font-family: var(--f-serif);
+    font-size: var(--fs-body);
+    line-height: 1.4;
+}
+
+/* General content --------------------------------------------------------- */
+
+p, h1, h2, h3, h4, hr, figure, ul, ol {
+    max-width: var(--s-page-width);
+    margin: 1em auto;
+    padding: 0 24px;
+}
+
+ul, ol {
+    padding-left: 48px;
+    max-width: 676px;
+}
+
+li {
+    margin: 1em auto;
+}
+
+li > p {
+    padding-right: 0;
+    padding-left: .5em;
+}
+
+figure img {
+    max-width: 100%;
+}
+
+blockquote {
+    max-width: var(--s-page-width);
+    margin: 1em auto;
+    border-left: 5px solid var(--c-light);
+}
+
+hr {
+    background-color: var(--c-light);
+    border: none;
+    height: 1px;
+    margin: 2em auto;
+}
+
+h1 { font-size: var(--fs-h1); font-family: var(--f-sans); }
+h2 { font-size: var(--fs-h2); font-family: var(--f-sans); }
+h3 { font-size: var(--fs-h3); font-family: var(--f-sans); }
+
+.title a {
+    color: var(--c-light);
+}
+
+.title-wrapper .info {
+    padding: 0 24px;
+}
+
+.info {
+    max-width: var(--s-page-width);
+    margin: 0 auto 1em;
+    font-family: var(--f-sans);
+}
+
+a {
+    color: var(--c-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Blog -------------------------------------------------------------------- */
+
+.postlist a:hover {
+    text-decoration: none;
+    border-bottom: 1px solid var(--c-blue);
+}
+
+.postlist li {
+  margin: .3em auto;
+}
+
+/* Header ------------------------------------------------------------------ */
+
+#header {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    border-bottom: 4px solid var(--c-light);
+    max-width: var(--s-page-width);
+    margin: 0 auto;
+}
+
+@media (min-width: 540px) {
+    #header {
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+}
+
+#header a {
+    color: var(--c-light);
+}
+
+#header h1 {
+    margin: 0;
+    font-size: 32px;
+    text-align: center;
+}
+
+.site-navigation {
+    font-family: var(--f-sans);
+    font-weight: bold;
+    line-height: 2;
+}
+
+.site-navigation ul {
+    margin: 0;
+    text-transform: uppercase;
+    padding: 0;
+}
+
+.site-navigation li {
+    display: inline;
+    margin: 0 0.5em;
+}
+
+.site-navigation a {
+    color: var(--c-light);
+}
+
+/* Inline code ------------------------------------------------------------- */
+
+code {
+    font-family: var(--f-mono);
+    font-size: var(--fs-code);
+    background-color: var(--c-darker);
+}
+
+/* Code blocks ------------------------------------------------------------- */
+
+pre {
+    background-color: var(--c-darker);
+    width: 100%;
+}
+
+pre code {
+    font-size: var(--fs-code-block);
+    display: block;
+    max-width: var(--s-code-block-width);
+    margin: 24px auto;
+    padding: 1em;
+    overflow-x: auto;
+}
+
+/* KeyWordTok */
+.sourceCode .kw { color: #268BD2; }
+/* DataTypeTok */
+.sourceCode .dt { color: #268BD2; }
+/* DecValTok (decimal value), BaseNTok, FloatTok */
+.sourceCode .dv, .sourceCode .bn, .sourceCode .fl { color: #D33682; }
+/* CharTok */
+.sourceCode .ch { color: #DC322F; }
+/* StringTok */
+.sourceCode .st { color: #2AA198; }
+/* CommentTok */
+.sourceCode .co { color: #93A1A1; }
+/* OtherTok */
+.sourceCode .ot { color: #A57800; }
+/* AlertTok */
+.sourceCode .al { color: #CB4B16; font-weight: bold; }
+/* FunctionTok */
+.sourceCode .fu { color: #268BD2; }
+/* RegionMarkerTok */
+.sourceCode .re { }
+/* ErrorTok */
+.sourceCode .er { color: #D30102; font-weight: bold; }
