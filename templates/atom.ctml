@@ -9,12 +9,14 @@
     <email>hi@joram.io</email>
   </author>
   <updated lquery="(text (format-timestamp newest-timestamp))">DATE</updated>
-  <entry iterate="posts">
-    <title lquery="(text (post-title *))">TITLE</title>
-    <link href="LINK" lquery="(attr :href (full-url (post-url *)))"/>
-    <id lquery="(text (full-url (post-url *)))">ID</id>
-    <published lquery="(text (format-timestamp (post-published *)))">DATE</published>
-    <updated lquery="(text (format-timestamp (or (post-updated *) (post-published *))))">DATE</updated>
-    <summary lquery="(html (to-cdata (post-html *)))"></summary>
-  </entry>
+  <c:splice iterate="posts">
+    <entry>
+      <title lquery="(text (post-title *))">TITLE</title>
+      <link href="LINK" lquery="(attr :href (full-url (post-url *)))"/>
+      <id lquery="(text (full-url (post-url *)))">ID</id>
+      <published lquery="(text (format-timestamp (post-published *)))">DATE</published>
+      <updated lquery="(text (format-timestamp (or (post-updated *) (post-published *))))">DATE</updated>
+      <content type="html" lquery="(html (to-cdata (post-html *)))"></content>
+    </entry>
+  </c:splice>
 </feed>
