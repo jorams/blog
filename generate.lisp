@@ -74,7 +74,7 @@
   (let ((plump:*tag-dispatchers* plump:*xml-tags*))
     (clip:process #p"templates/atom.ctml"
                   :url url
-                  :newest-timestamp (apply #'timestamp-minimum
+                  :newest-timestamp (apply #'timestamp-maximum
                                            (map 'list #'post-published posts))
                   :posts posts)))
 
