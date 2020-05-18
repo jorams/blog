@@ -62,7 +62,7 @@ options is to use an http(s) URL.
 An easy way to set this up is to run a web server in the music directory:
 
 ```
-python -m http.server --bind --directory ~/music 8000
+python -m http.server --directory ~/music 8000
 ```
 
 This web server will serve all files from the music directory to the network on
