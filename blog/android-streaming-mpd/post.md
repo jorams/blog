@@ -102,7 +102,7 @@ The entire `mpd.conf` on my phone contains only those two snippets:
 
 ```
 # /storage/emulated/0/mpd.conf
-music_directory "http://192.168.1.100:8000/
+music_directory "http://192.168.1.100:8000/"
 
 database {
   plugin "proxy"
