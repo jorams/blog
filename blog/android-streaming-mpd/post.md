@@ -97,7 +97,7 @@ database {
 And that's it! The result is that I can play everything in my library on my
 phone as if it were local, as long as my desktop is reachable (over VPN).
 
-(Satellite setup is described [here][satellite-docs] in the MPD documentation.)
+(Satellite setup is described [in the MPD documentation][satellite-docs].)
 
 [satellite-docs]: https://www.musicpd.org/doc/html/user.html#satellite-setup
 
