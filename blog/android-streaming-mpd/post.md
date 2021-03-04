@@ -1,5 +1,8 @@
 ---
 title: Streaming music on Android using MPD
+description:
+  How I stream my own music library to Android using MPD,
+  while avoiding too much bandwidth usage for lossless audio.
 published: 2020-05-18
 ---
 

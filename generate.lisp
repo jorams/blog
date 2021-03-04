@@ -47,6 +47,7 @@
 
 (defstruct post
   title
+  description
   published
   updated
   url
@@ -54,19 +55,24 @@
 
 ;;; Templates -----------------------------------------------------------------
 
-(defun default-template (title body)
+(defun default-template (title description body)
   (clip:process #p"templates/default.ctml"
                 :title title
+                :description description
                 :body body))
 
-(defun page-template (title browser-title body)
-  (default-template browser-title (clip:process #p"templates/page.ctml"
-                                                :title title
-                                                :body body)))
+(defun page-template (title browser-title description body)
+  (default-template browser-title
+                    description
+                    (clip:process #p"templates/page.ctml"
+                                  :title title
+                                  :body body)))
 
 (defun post-template (post)
-  (default-template (post-title post) (clip:process #p"templates/post.ctml"
-                                                    :post post)))
+  (default-template (post-title post)
+                    (post-description post)
+                    (clip:process #p"templates/post.ctml"
+                                  :post post)))
 
 ;;; ATOM feed -----------------------------------------------------------------
 
@@ -117,10 +123,14 @@
   (let* ((metadata (pandoc-metadata in))
          (title (st-json:getjso "title" metadata))
          (browser-title (or (st-json:getjso "browserTitle" metadata)
-                            title)))
+                            title))
+         (description (st-json:getjso "description" metadata)))
     (check-type title string)
     (check-type browser-title string)
-    (plump-content out (page-template title browser-title (pandoc-markup in)))))
+    (check-type description string)
+    (plump-content out (page-template title browser-title
+                                      description
+                                      (pandoc-markup in)))))
 
 (defun relative-path (absolute-pathname base)
   (let ((pathname-directory (pathname-directory absolute-pathname))
@@ -154,12 +164,14 @@
          (html (pandoc-markup post.md))
          (metadata (pandoc-metadata post.md))
          (title (st-json:getjso "title" metadata))
+         (description (st-json:getjso "description" metadata))
          (published-string (st-json:getjso "published" metadata))
          (published (when published-string (parse-timestring published-string)))
          (updated-string (st-json:getjso "updated" metadata))
          (updated (when updated-string (parse-timestring updated-string)))
          (post (make-post
                 :title title
+                :description description
                 :published published
                 :updated updated
                 :url (format nil "/~a" path)
@@ -179,8 +191,10 @@
 
 (plump-content
  "blog/index.html"
- (page-template "Blog" "Blog" (clip:process #p"templates/post-list.ctml"
-                                            :posts *posts*)))
+ (page-template "Blog" "Blog"
+                "Sporadic blog posts about things that might be interesting."
+                (clip:process #p"templates/post-list.ctml"
+                              :posts *posts*)))
 
 (page "index.html" "index.md")
 

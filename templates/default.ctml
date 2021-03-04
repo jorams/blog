@@ -3,6 +3,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="initial-scale=1">
   <title><c:splice lquery="(text title)">TITLE</c:splice> - Joram Schrijver</title>
+  <c:if test="description">
+    <c:then><meta name="description" lquery="(attr :content description)"></c:then>
+  </c:if>
   <link rel="stylesheet" type="text/css" href="/style.css" />
   <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Reinventing the Future" />
 

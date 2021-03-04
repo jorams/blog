@@ -1,6 +1,7 @@
 ---
 title: Hi, I'm Joram.
 browserTitle: Joram Schrijver
+description: The homepage of Joram Schrijver.
 ---
 
 I program, among other things. Some of my code is
