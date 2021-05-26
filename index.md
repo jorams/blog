@@ -17,7 +17,6 @@ Talk to me on the internet.
 
 - GitHub: [jorams](https://github.com/jorams)
 
-- IRC: `mood`/`mood_` on [Freenode](http://freenode.net/)
-  ([Webchat](http://webchat.freenode.net/))
+- IRC: `mood`/`mood_` on [Libera Chat](https://libera.chat/)
 
-    I usually idle in `#lisp` and a variety of other channels.
+    I usually idle in `#commonlisp` and a variety of other channels.
