@@ -1,0 +1,44 @@
+image: alpine/edge
+packages:
+  - make
+  - sbcl
+  - pandoc-cli
+  - rsync
+sources:
+  - https://git.sr.ht/~joram/joram.io
+secrets:
+  - a47a312e-825a-4d38-8b9a-530eae9e9f33
+environment:
+  sshconfig: |
+    StrictHostKeyChecking no
+
+    Host deploy
+      User deploy
+      Hostname kestral.joram.io
+      Port 2222
+triggers:
+  - action: email
+    condition: always
+    to: builds@joram.io
+tasks:
+  - install-quicklisp: |
+      wget https://beta.quicklisp.org/quicklisp.lisp
+      sbcl --non-interactive \
+           --load quicklisp.lisp \
+           --eval '(quicklisp-quickstart:install)' \
+           --eval '(ql-util:without-prompting (ql:add-to-init-file))' \
+           --quit
+  - generate: |
+      cd joram.io
+      make
+  - check-deploy: |
+      cd joram.io
+      if [ "$(git rev-parse origin/master)" != "$(git rev-parse HEAD)" ]; then
+        echo "Not deploying because not on master branch"
+        complete-build
+      fi
+  - deploy: |
+      cd joram.io
+      echo "$sshconfig" >> ~/.ssh/config
+      rsync -rP --delete --delete-excluded \
+            _site/ deploy:joram.io/
