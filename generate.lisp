@@ -201,3 +201,4 @@
 (plump-xml-content "atom.xml" (atom-feed "/atom.xml" *posts*))
 
 (file-content "style.css" "style.css")
+(file-content "favicon.ico" "favicon.ico")
