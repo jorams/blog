@@ -13,8 +13,11 @@
     --fs-h1: 40px;
     --fs-h2: 30px;
     --fs-h3: 26px;
+    --fs-body-mobile: 18px;
     --fs-body: 21px;
+    --fs-code-mobile: 15px;
     --fs-code: 18px;
+    --fs-code-block-mobile: 15px;
     --fs-code-block: 17px;
 
     --s-page-width: 700px;
@@ -37,8 +40,14 @@ body {
     background-color: var(--c-dark);
     margin: 0;
     font-family: var(--f-serif);
-    font-size: var(--fs-body);
+    font-size: var(--fs-body-mobile);
     line-height: 1.4;
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        font-size: var(--fs-body);
+    }
 }
 
 /* General content --------------------------------------------------------- */
@@ -172,8 +181,14 @@ a:hover {
 
 code {
     font-family: var(--f-mono);
-    font-size: var(--fs-code);
+    font-size: var(--fs-code-mobile);
     background-color: var(--c-darker);
+}
+
+@media screen and (min-width: 992px) {
+    code {
+        font-size: var(--fs-code);
+    }
 }
 
 /* Code blocks ------------------------------------------------------------- */
@@ -184,12 +199,18 @@ pre {
 }
 
 pre code {
-    font-size: var(--fs-code-block);
+    font-size: var(--fs-code-block-mobile);
     display: block;
     max-width: var(--s-code-block-width);
     margin: 24px auto;
     padding: 1em;
     overflow-x: auto;
+}
+
+@media screen and (min-width: 992px) {
+    pre code {
+        font-size: var(--fs-code-block);
+    }
 }
 
 /* KeyWordTok */
