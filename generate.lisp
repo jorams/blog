@@ -1,4 +1,4 @@
-(ql:quickload '(:clip :st-json :local-time) :silent t)
+(ql:quickload '(:clip :st-json :local-time :lparallel) :silent t)
 (local-time:enable-read-macros)
 
 (defpackage :generate
@@ -177,17 +177,20 @@
                 :url (format nil "/~a" path)
                 :html html)))
     (when published
-      (push post *posts*)
       (plump-content index.html (post-template post))
-      (directory-content path path :exclude (list (merge-pathnames post.md))))))
+      (directory-content path path :exclude (list (merge-pathnames post.md)))
+      post)))
 
 ;;; Content -------------------------------------------------------------------
 
-(loop for post in (directory "blog/*")
-      for relative = (relative-path post "")
-      do (post relative))
+;; We need the *package* binding for Clip
+(let ((package `((*package* . ,(find-package :generate)))))
+  (setf lparallel:*kernel* (lparallel:make-kernel 8 :bindings package)))
 
-(setf *posts* (sort *posts* #'timestamp> :key #'post-published))
+(let* ((paths (loop for post in (directory "blog/*")
+                    collect (relative-path post "")))
+       (posts (lparallel:pmapcar 'post paths)))
+  (setf *posts* (sort posts #'timestamp> :key #'post-published)))
 
 (plump-content
  "blog/index.html"
