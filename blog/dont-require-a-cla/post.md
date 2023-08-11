@@ -58,7 +58,7 @@ When starting an open source project, consider the consequences of requiring a
 CLA. If you're very concerned about the legal status of contributions, consider
 handing the reign of the project over to an organization like the Apache
 Foundation or the Free Software Foundation instead of requiring contributors to
-sign a CLA of your own. There are many people who have signed their NDAs and it
+sign a CLA of your own. There are many people who have signed their CLAs and it
 makes your intentions clear. However, even if you're concerned, consider if it's
 really that big of a problem. Huge open source projects like Linux and
 [FreeBSD][] have been running for years without a CLA. They have been very
