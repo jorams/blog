@@ -56,6 +56,25 @@ to do so once.
 This works very well, and removes the need to build each package several times,
 but there are a few problems left.
 
+**Update 2024-09-28:** [As of pacman 7.0.0][pacman7] it supports a
+`DownloadUser` setting which is enabled by default in `pacman.conf`. This user
+(called `alpm`) needs access to the repo and package files for the package
+repository. To make this easy I created a directory outside my home directory,
+owned by my user and the group `alpm`. I do everything in that directory.
+
+[pacman7]: https://archlinux.org/news/manual-intervention-for-pacman-700-and-local-repositories-required/
+
+```sh
+# Choose some location you like
+sudo mkdir /var/custom-pacman-package-repo
+sudo chown myuser:alpm /var/custom-pacman-package-repo
+
+# Do everything in there
+cd /var/custom-pacman-package-repo
+mkdir ./repo
+...
+```
+
 ## Building in a chroot
 
 When building custom packages using
