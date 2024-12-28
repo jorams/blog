@@ -6,7 +6,7 @@
         DATE
       </c:splice>
       <c:when test="(post-updated post)">
-        (updated on <c:splice lquery="(text (format-date (post-updated post)))">UPDATED</c:splice>)
+        (updated <c:splice lquery="(text (format-date (post-updated post)))">UPDATED</c:splice>)
       </c:when></div>
   </header>
   <c:splice lquery="(html (post-html post))">BODY</c:splice>

@@ -1,6 +1,7 @@
 ---
 title: Managing Arch Linux using a custom package repository
 published: 2023-08-10
+updated: 2024-09-28
 ---
 
 I use [Arch Linux](https://archlinux.org/) (btw), and while the default package
