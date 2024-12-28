@@ -64,7 +64,7 @@ options is to use an http(s) URL.
 
 An easy way to set this up is to run a web server in the music directory:
 
-```
+```sh
 python -m http.server --directory ~/music 8000
 ```
 
@@ -138,7 +138,7 @@ basic documentation on [Sourcehut][tms-srht] or [GitHub][tms-github]. I used
 [Go][golang] for this, primarily because it has a web server with support for
 things like [range requests][range-requests] built in.
 
-```bash
+```sh
 transcoding-music-server \
     --target ~/.music.transcoded \
     --origin ~/music \

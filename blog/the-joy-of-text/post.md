@@ -14,7 +14,7 @@ Binary protocols are also boring. If you've never used [telnet(1)][] or
 [netcat(1)][] to connect to an [IRC][] server, you should give it a try. It's
 easy:
 
-```bash
+```sh
 $ nc irc.server.name 6667
 
 # Tell the server who you are

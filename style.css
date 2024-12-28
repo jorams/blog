@@ -2,7 +2,8 @@
 
 :root {
     --c-dark: #1a1a1a;
-    --c-darker: #111;
+    --c-darker: #151515;
+    --c-darkest: #111;
     --c-light: #eee;
     --c-blue: #3094ff;
 
@@ -19,15 +20,18 @@
     --fs-code: 18px;
     --fs-code-block-mobile: 15px;
     --fs-code-block: 17px;
+    --fs-info: 16px;
+    --fs-tiny: 12px;
 
     --s-page-width: 700px;
-    --s-code-block-width: 800px;
+    --s-content-width: 832px;
 }
 
 @media (prefers-color-scheme: light) {
     :root {
         --c-dark: #eee;
-        --c-darker: #e5e5e5;
+        --c-darker: #e8e8e8;
+        --c-darkest: #e5e5e5;
         --c-light: #111;
         --c-blue: #0059b8;
     }
@@ -37,7 +41,7 @@
 
 body {
     color: var(--c-light);
-    background-color: var(--c-dark);
+    background-color: var(--c-darkest);
     margin: 0;
     font-family: var(--f-serif);
     font-size: var(--fs-body-mobile);
@@ -51,6 +55,14 @@ body {
 }
 
 /* General content --------------------------------------------------------- */
+
+#content > article {
+    max-width: var(--s-content-width);
+    margin: 0 auto 2em;
+    padding: 2em 0;
+    background-color: var(--c-dark);
+    border-radius: 8px;
+}
 
 p, h1, h2, h3, h4, hr, figure, ul, ol {
     max-width: var(--s-page-width);
@@ -93,12 +105,17 @@ h1 { font-size: var(--fs-h1); font-family: var(--f-sans); }
 h2 { font-size: var(--fs-h2); font-family: var(--f-sans); }
 h3 { font-size: var(--fs-h3); font-family: var(--f-sans); }
 
+.title {
+    margin: 0 auto 16px;
+}
+
 .title a {
     color: var(--c-light);
 }
 
 .title-wrapper .info {
     padding: 0 24px;
+    font-size: var(--fs-info);
 }
 
 .info {
@@ -133,9 +150,9 @@ a:hover {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    border-bottom: 4px solid var(--c-light);
-    max-width: var(--s-page-width);
+    max-width: var(--s-content-width);
     margin: 0 auto;
+    padding: 16px 0;
 }
 
 @media (min-width: 540px) {
@@ -182,7 +199,7 @@ a:hover {
 code {
     font-family: var(--f-mono);
     font-size: var(--fs-code-mobile);
-    background-color: var(--c-darker);
+    background-color: var(--c-darkest);
 }
 
 @media screen and (min-width: 992px) {
@@ -193,18 +210,15 @@ code {
 
 /* Code blocks ------------------------------------------------------------- */
 
-pre {
-    background-color: var(--c-darker);
-    width: 100%;
-}
-
 pre code {
+    position: relative;
     font-size: var(--fs-code-block-mobile);
     display: block;
-    max-width: var(--s-code-block-width);
-    margin: 24px auto;
+    margin: 24px 0;
     padding: 1em;
     overflow-x: auto;
+    background-color: var(--c-darker);
+    border-top: 1px solid var(--c-blue);
 }
 
 @media screen and (min-width: 992px) {
@@ -212,6 +226,22 @@ pre code {
         font-size: var(--fs-code-block);
     }
 }
+
+pre code::before {
+    content: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--c-blue);
+    padding: 1px 6px 0;
+    font-size: var(--fs-tiny);
+    color: var(--c-darkest);
+}
+
+pre.sh code::before { content: 'sh'; }
+pre.ini code::before { content: 'conf'; }
+pre.conf code::before { content: 'conf'; }
+pre.commonlisp code::before { content: 'lisp'; }
 
 /* KeyWordTok */
 .sourceCode .kw { color: #268BD2; }
