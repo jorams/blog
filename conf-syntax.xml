@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language>
+<language name="Generic config files" section="Configuration" extensions="*.conf" version="1">
+  <!-- Skylighting used by Pandoc defaults "conf" syntax to TOML, which is
+       something much more specific than I usually intend. This definition is
+       intended to properly highlight "config files" generically without caring
+       too much about specifics. -->
+  <highlighting>
+    <contexts>
+      <context name="conf" attribute="Normal Text" lineEndContext="#stay">
+        <RangeDetect attribute="Section" context="#stay" char="[" char1="]" beginRegion="Section" endRegion="Section" />
+        <DetectChar attribute="Brace" context="#stay" char="}" endRegion="Block" />
+        <DetectChar attribute="Comment" context="Comment" char="#" />
+        <DetectChar attribute="Comment" context="Comment" char=";" />
+        <DetectIdentifier attribute="Directive" context="Params" />
+        <DetectSpaces />
+      </context>
+
+      <context name="Params" attribute="Normal Text" lineEndContext="#pop" fallthroughContext="Value">
+        <DetectSpaces />
+        <DetectChar attribute="Assignment" context="Value" char="=" />
+      </context>
+
+      <context name="Value" attribute="Value" lineEndContext="#pop">
+        <DetectSpaces />
+        <DetectChar attribute="Brace" context="#pop" char="{" beginRegion="Block"/>
+      </context>
+
+      <context name="Comment" attribute="Comment" lineEndContext="#pop">
+        <DetectSpaces />
+        <IncludeRules context="##Comments" />
+        <DetectIdentifier />
+      </context>
+    </contexts>
+
+    <itemDatas>
+      <itemData name="Normal Text" defStyleNum="dsNormal" spellChecking="false"/>
+      <itemData name="Section" defStyleNum="dsKeyword" spellChecking="false"/>
+      <itemData name="Directive" defStyleNum="dsFunction" spellChecking="false"/>
+      <itemData name="Comment" defStyleNum="dsComment"/>
+      <itemData name="Assignment" defStyleNum="dsOperator" spellChecking="false"/>
+      <itemData name="Value" defStyleNum="dsString" spellChecking="false"/>
+      <itemData name="Brace" defStyleNum="dsOperator" spellChecking="false"/>
+    </itemDatas>
+  </highlighting>
+
+
+  <general>
+    <comments>
+      <comment name="singleLine" start=";" />
+      <comment name="singleLine" start="#" />
+    </comments>
+  </general>
+
+</language>

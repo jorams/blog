@@ -14,7 +14,8 @@
          (err (make-string-output-stream))
          (process (sb-ext:run-program
                    "pandoc"
-                   parameters
+                   (cons "--syntax-definition=conf-syntax.xml"
+                         parameters)
                    :search t
                    :output out
                    :error err)))

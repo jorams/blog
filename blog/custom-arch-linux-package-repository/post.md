@@ -39,7 +39,7 @@ but Pacman is not aware of it yet. To make it available it needs a section in
 [`pacman.conf`](https://man.archlinux.org/man/pacman.conf.5). Note that the
 name in brackets should match the name of the repo file:
 
-```ini
+```conf
 [custom-repo]
 SigLevel = Optional TrustAll
 Server = file:///path/to/repo

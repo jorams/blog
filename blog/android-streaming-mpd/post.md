@@ -84,7 +84,7 @@ served over HTTP. Instead, we can configure the [proxy database
 plugin][mpd-proxy-plugin]. This makes MPD query another MPD instance for all
 library-related functionality.
 
-```
+```conf
 # /storage/emulated/0/mpd.conf
 database {
   plugin "proxy"
@@ -103,7 +103,7 @@ phone as if it were local, as long as my desktop is reachable (over VPN).
 
 The entire `mpd.conf` on my phone contains only those two snippets:
 
-```
+```conf
 # /storage/emulated/0/mpd.conf
 music_directory "http://192.168.1.100:8000/"
 
