@@ -4,6 +4,7 @@
     --c-dark: #1a1a1a;
     --c-darker: #151515;
     --c-darkest: #111;
+    --c-darkest-shadow: #0d0d0d;
     --c-light: #eee;
     --c-blue: #3094ff;
 
@@ -32,6 +33,7 @@
         --c-dark: #eee;
         --c-darker: #e8e8e8;
         --c-darkest: #e5e5e5;
+        --c-darkest-shadow: #dadada;
         --c-light: #111;
         --c-blue: #0059b8;
     }
@@ -62,6 +64,7 @@ body {
     padding: 2em 0;
     background-color: var(--c-dark);
     border-radius: 8px;
+    box-shadow: var(--c-darkest-shadow) 0 0 16px;
 }
 
 p, h1, h2, h3, h4, hr, figure, ul, ol {
