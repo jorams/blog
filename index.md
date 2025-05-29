@@ -19,7 +19,3 @@ Talk to me on the internet.
 - GitHub: [jorams](https://github.com/jorams)
 
 - SourceHut [~joram](https://sr.ht/~joram/)
-
-- IRC: `mood`/`mood_` on [Libera Chat](https://libera.chat/)
-
-    I usually idle in `#commonlisp` and a variety of other channels.
