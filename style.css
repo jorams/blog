@@ -245,6 +245,9 @@ pre.sh code::before { content: 'sh'; }
 pre.ini code::before { content: 'conf'; }
 pre.conf code::before { content: 'conf'; }
 pre.commonlisp code::before { content: 'lisp'; }
+pre.systemd code::before { content: 'systemd'; }
+pre.caddy code::before { content: 'caddy'; }
+pre.yaml code::before { content: 'yaml'; }
 
 /* KeyWordTok */
 .sourceCode .kw { color: #268BD2; }
